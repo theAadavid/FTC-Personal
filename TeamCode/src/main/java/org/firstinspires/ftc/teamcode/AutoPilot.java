@@ -95,6 +95,13 @@ public class AutoPilot extends OpMode {
 
     @Override
     public void loop() {
+        if (!Constants.FORESIGHT_TUNED) {
+            telemetry.addLine("Foresight not tuned - run the tuners and update Constants.java first");
+            telemetry.addData("x", follower.pose().x());
+            telemetry.addData("y", follower.pose().y());
+            telemetry.addData("hdg", follower.pose().heading());
+            return;
+        }
         follower.update();
         statePathUpdate();
 
