@@ -18,6 +18,7 @@ import com.pedropathing.math.Matrix;
 import com.pedropathing.math.Vector2D;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+import org.firstinspires.ftc.teamcode.HardwareNames;
 
 public class Constants {
 
@@ -29,10 +30,10 @@ public class Constants {
 
 
     public static MecanumConfig drivetrainConfig = new MecanumConfig(c -> {
-        c.frontLeftName.set("left_front");
-        c.frontRightName.set("right_front");
-        c.backLeftName.set("left_back");
-        c.backRightName.set("right_back");
+        c.frontLeftName.set(HardwareNames.FRONT_LEFT);
+        c.frontRightName.set(HardwareNames.FRONT_RIGHT);
+        c.backLeftName.set(HardwareNames.BACK_LEFT);
+        c.backRightName.set(HardwareNames.BACK_RIGHT);
         c.frontLeftDirection.set(DcMotorSimple.Direction.REVERSE);
         c.frontRightDirection.set(DcMotorSimple.Direction.FORWARD);
         c.backLeftDirection.set(DcMotorSimple.Direction.REVERSE);
@@ -41,7 +42,7 @@ public class Constants {
 
     //public static PathConstraints pathConstraints = new PathConstraints(0.99, 100, 67);
     public static PinpointConfig localizerConfig = new PinpointConfig(c -> {
-        c.name.set("pinpoint");
+        c.name.set(HardwareNames.PINPOINT);
         c.podType.set(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD);
         c.xPodOffset.set(-2.5457436268723854);
         c.yPodOffset.set(-2.243913665531189);
